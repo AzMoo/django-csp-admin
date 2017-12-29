@@ -19,7 +19,14 @@ DIRECTIVES = (
     'manifest-src',
     'worker-src',
     'plugin-types',
-    'require-sri-for'
+    'require-sri-for',
+    'upgrade-insecure-requests',
+    'block-all-mixed-content'
+)
+
+BOOL_DIRECTIVES = (
+    'upgrade-insecure-requests',
+    'block-all-mixed-content'
 )
 
 DIRECTIVE_CHOICES = [(d, d) for d in DIRECTIVES]
@@ -28,6 +35,7 @@ DIRECTIVE_CHOICES = [(d, d) for d in DIRECTIVES]
 class CSPDirective(models.Model):
     name = models.CharField(
         max_length=255, choices=DIRECTIVE_CHOICES, unique=True)
+    enabled = models.BooleanField(blank=True, default=False)
 
     class Meta:
         verbose_name = 'CSP Directive'

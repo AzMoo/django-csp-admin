@@ -15,7 +15,7 @@ class CSPDirectiveAdmin(admin.ModelAdmin):
         return ', '.join([v.value for v in obj.directive_values.all()])
     joined_values.short_description = 'Values'
 
-    list_display = ('name', 'joined_values')
+    list_display = ('name', 'enabled', 'joined_values')
     inlines = [
         CSPDirectiveValueInline,
     ]

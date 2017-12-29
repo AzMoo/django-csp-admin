@@ -3,7 +3,7 @@ try:
 except ImportError:
     MiddlewareMixin = object
 
-from .models import CSPDirective
+from .models import BOOL_DIRECTIVES, CSPDirective
 
 
 class DjangoCSPAdminMiddleware(MiddlewareMixin):
@@ -23,10 +23,15 @@ class DjangoCSPAdminMiddleware(MiddlewareMixin):
         from the database and adding it to the response.
         """
 
-        response._csp_config = {  # pylint: disable=protected-access
-            d.name: list(
-                d.directive_values.values_list('value', flat=True)
-            ) for d in CSPDirective.objects.all()
-        }
+        config = {}
+
+        for d in CSPDirective.objects.filter(enabled=True):
+            if d.name in BOOL_DIRECTIVES:
+                config[d.name] = True
+            else:
+                config[d.name] = list(
+                    d.directive_values.values_list('value', flat=True))
+
+        response._csp_config = config  # pylint: disable=protected-access
 
         return response

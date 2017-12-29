@@ -19,9 +19,7 @@ DIRECTIVES = (
     'manifest-src',
     'worker-src',
     'plugin-types',
-    'require-sri-for',
-    'upgrade-insecure-requests',
-    'block-all-mixed-content',
+    'require-sri-for'
 )
 
 DIRECTIVE_CHOICES = [(d, d) for d in DIRECTIVES]

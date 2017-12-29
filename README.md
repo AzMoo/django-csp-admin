@@ -6,7 +6,40 @@ Admin interface for Django CSP. Provides middleware and models to store the CSP 
 
 ## Installation
 
-```pip install django-csp-admin --extra-index-url=http://cmv-pkg-shed.s3-website-ap-southeast-2.amazonaws.com/ --trusted-host=cmv-pkg-shed.s3-website-ap-southeast-2.amazonaws.com```
+Install with the following:
+
+```
+pip install django-csp-admin --extra-index-url=http://cmv-pkg-shed.s3-website-ap-southeast-2.amazonaws.com/ --trusted-host=cmv-pkg-shed.s3-website-ap-southeast-2.amazonaws.com
+```
+
+Add to ```INSTALLED_APPS```:
+
+```
+INSTALLED_APPS = (
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'csp_admin',
+    ...
+)
+```
+
+Add to ```MIDDLEWARE_CLASSES``` _below_ ```django-csp``` middleware:
+
+```
+MIDDLEWARE_CLASSES = (
+    ...
+    'csp.middleware.CSPMiddleware',
+    'csp_admin.middleware.DjangoCSPAdminMiddleware',
+    ...
+)
+```
+
+Make sure you run migrations to initialise the database!
 
 ## Tests
 

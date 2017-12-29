@@ -19,7 +19,9 @@ setup(
         'dev': [
             'pre-commit',
             'prospector',
-            's3pypi'
+            's3pypi',
+            'pytest',
+            'pytest-django'
         ]
     }
 )

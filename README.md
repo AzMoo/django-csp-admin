@@ -6,7 +6,7 @@ Admin interface for Django CSP. Provides middleware and models to store the CSP 
 
 ## Installation
 
-```pip install django-csp-admin```
+```pip install django-csp-admin --extra-index-url=http://cmv-pkg-shed.s3-website-ap-southeast-2.amazonaws.com/ --trusted-host=cmv-pkg-shed.s3-website-ap-southeast-2.amazonaws.com```
 
 ## Tests
 

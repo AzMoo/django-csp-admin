@@ -6,7 +6,7 @@ except ImportError:
 from .models import CSPDirective
 
 
-class DjangoCSPAdminMiddlware(MiddlewareMixin):
+class DjangoCSPAdminMiddleware(MiddlewareMixin):
     """
     Middleware to add the CSP configuration to the response.
 

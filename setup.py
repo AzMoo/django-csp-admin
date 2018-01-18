@@ -5,7 +5,7 @@ setup(
     description='Admin interface for Django CSP',
     url='http://gitlab/websites/django-csp-admin',
     author='Matt Magin',
-    author_email='matt.magin@cmv.com.au',
+    author_email='matt.azmoo@mail.com',
     license='Proprietary',
     setup_requires=["setuptools_scm>=1.11.1"],
     use_scm_version=True,

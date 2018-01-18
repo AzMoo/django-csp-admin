@@ -1,6 +1,8 @@
 ## Django CSP Admin
 
 Admin interface for Django CSP. Provides middleware and models to store the CSP configuration. Allows modification of CSP configuration without changing ```settings.py```.
+I've created this because it got frustrating having to keep adding stuff to ```settings.py``` and committing to source control every time somebody decided to add a new piece
+of external javascript.
 
 ## Code Example
 
@@ -9,7 +11,7 @@ Admin interface for Django CSP. Provides middleware and models to store the CSP 
 Install with the following:
 
 ```
-pip install django-csp-admin --extra-index-url=http://cmv-pkg-shed.s3-website-ap-southeast-2.amazonaws.com/ --trusted-host=cmv-pkg-shed.s3-website-ap-southeast-2.amazonaws.com
+pip install django-csp-admin
 ```
 
 Add to ```INSTALLED_APPS```:
@@ -43,8 +45,13 @@ Make sure you run migrations to initialise the database!
 
 ## Tests
 
-Describe and show how to run the tests with code examples.
+To run tests, create a virtualenv, install package, run pytest:
+
+```
+pip install -e .[dev]
+pytest
+```
 
 ## License
 
-Proprietry CMV. Will probably open source this in the future.
+MIT License. See ```LICENSE``` file.

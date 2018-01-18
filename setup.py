@@ -6,7 +6,7 @@ setup(
     url='http://gitlab/websites/django-csp-admin',
     author='Matt Magin',
     author_email='matt.azmoo@mail.com',
-    license='Proprietary',
+    license='MIT',
     setup_requires=["setuptools_scm>=1.11.1"],
     use_scm_version=True,
     packages=find_packages(),

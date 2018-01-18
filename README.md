@@ -4,8 +4,6 @@ Admin interface for Django CSP. Provides middleware and models to store the CSP 
 I've created this because it got frustrating having to keep adding stuff to ```settings.py``` and committing to source control every time somebody decided to add a new piece
 of external javascript.
 
-## Code Example
-
 ## Installation
 
 Install with the following:

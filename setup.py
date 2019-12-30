@@ -13,7 +13,7 @@ setup(
     include_package_data=True,
     install_requires=[
         'django-csp==3.3',
-        'Django==1.11',
+        'Django==1.11.23',
     ],
     extras_require={
         'dev': [
